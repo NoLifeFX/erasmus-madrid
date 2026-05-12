@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Le guide indépendant des étudiants français en Erasmus à Madrid. SIM, banque sans NIE, assurance, logement et bons plans pour bien s'installer.",
-  metadataBase: new URL("https://erasmus-madrid.fr"),
+  metadataBase: new URL("https://erasmus-madrid.vercel.app"),
   openGraph: {
     siteName: "Erasmus Madrid",
     locale: "fr_FR",
