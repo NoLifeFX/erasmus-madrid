@@ -46,7 +46,7 @@ export default function RootLayout({
         <SpeedInsights />
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7798901893667270"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
