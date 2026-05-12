@@ -26,11 +26,14 @@ export const metadata: Metadata = {
   description:
     "Le guide indépendant des étudiants français en Erasmus à Madrid. SIM, banque sans NIE, assurance, logement et bons plans pour bien s'installer.",
   metadataBase: new URL("https://erasmus-madrid.vercel.app/"),
+  verification: {
+    google: "dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU",
+  },
   openGraph: {
     siteName: "Erasmus Madrid",
     locale: "fr_FR",
     type: "website",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +41,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${playfair.variable} h-full`}>
-      <meta name="google-site-verification" content="dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU" />
       <body className="min-h-full flex flex-col font-sans text-ink antialiased">
         <AdSenseInit />
         {children}

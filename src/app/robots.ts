@@ -5,6 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: "*", allow: "/", disallow: ["/admin", "/api/admin"] },
     ],
-    sitemap: "https://erasmus-madrid.fr/sitemap.xml",
+    sitemap: "https://erasmus-madrid.vercel.app/sitemap.xml",
   };
 }
