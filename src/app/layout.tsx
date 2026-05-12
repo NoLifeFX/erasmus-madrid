@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,35 +28,27 @@ export const metadata: Metadata = {
     siteName: "Erasmus Madrid",
     locale: "fr_FR",
     type: "website",
-    images: [
-      {
-        url: "/og-default.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Erasmus Madrid — Guide pour étudiants français",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-  },
-  alternates: {
-    canonical: "https://erasmus-madrid.fr",
-  },
+  twitter: { card: "summary_large_image" },
+    // Ajoute cette ligne ↓
+    verification: {
+      google: 'dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU',
+  
+  }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${playfair.variable} h-full`}>
+      <meta name="google-site-verification" content="dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU" />
       <body className="min-h-full flex flex-col font-sans text-ink antialiased">
-        <Header />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
 }
+

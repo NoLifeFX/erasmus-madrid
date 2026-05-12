@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { articles } from "@/lib/articles";
+import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Erasmus Madrid — Guide complet pour étudiants français",
@@ -82,7 +84,9 @@ const categories = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const articles = await getPublishedArticles();
+
   return (
     <>
       {/* ─── Hero ─── */}
@@ -138,7 +142,7 @@ export default function HomePage() {
             {/* Stats */}
             <div className="flex flex-wrap items-center gap-8 mt-10 pt-10 border-t border-gray-200">
               {[
-                { value: "3", label: "guides complets" },
+                { value: String(articles.length), label: "guides complets" },
                 { value: "100%", label: "gratuit" },
                 { value: "2025", label: "mis à jour" },
               ].map((stat) => (

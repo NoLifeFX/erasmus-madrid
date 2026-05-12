@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { articles } from "@/lib/articles";
+import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Tous nos guides Erasmus Madrid",
@@ -19,10 +21,12 @@ export const metadata: Metadata = {
 
 const categoryLabels: Record<string, string> = {
   sim: "SIM & Mobile",
+  telephonie: "Téléphonie",
   banque: "Banque",
   assurance: "Assurance",
   logement: "Logement",
   "bons-plans": "Bons plans",
+  "vie-pratique": "Vie pratique",
   quartiers: "Quartiers",
 };
 
@@ -32,12 +36,13 @@ export default async function ArticlesPage({
   searchParams: Promise<{ cat?: string }>;
 }) {
   const { cat } = await searchParams;
+  const articles = await getPublishedArticles();
 
   const filtered = cat
     ? articles.filter((a) => a.categorySlug === cat)
     : articles;
 
-  const categoryName = cat ? categoryLabels[cat] : null;
+  const categoryName = cat ? (categoryLabels[cat] ?? cat) : null;
 
   return (
     <div className="bg-warm min-h-screen">
@@ -50,7 +55,7 @@ export default async function ArticlesPage({
           <p className="text-muted text-lg">
             {categoryName
               ? `${filtered.length} guide${filtered.length > 1 ? "s" : ""} dans la catégorie ${categoryName}`
-              : `${articles.length} guides complets pour bien préparer votre Erasmus à Madrid`}
+              : `${articles.length} guide${articles.length > 1 ? "s" : ""} complet${articles.length > 1 ? "s" : ""} pour bien préparer votre Erasmus à Madrid`}
           </p>
         </div>
       </div>
