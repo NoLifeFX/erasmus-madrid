@@ -4,7 +4,7 @@ import { getPublishedArticles } from "@/lib/articles";
 export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://eramad.vercel.app/";
+  const baseUrl = "https://erasmus-madrid.vercel.app/;
   const articles = await getPublishedArticles();
 
   const articleUrls = articles.map((article) => ({
