@@ -250,6 +250,52 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ─── Map CTA ─── */}
+      <section className="py-16 sm:py-20 bg-warm" aria-labelledby="map-cta-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden lg:flex lg:items-center">
+            <div className="p-8 sm:p-10 lg:flex-1">
+              <span className="inline-flex items-center gap-2 bg-brand/10 text-brand text-sm font-semibold px-3 py-1.5 rounded-full mb-5">
+                <span aria-hidden="true">🗺️</span> Outil exclusif
+              </span>
+              <h2
+                id="map-cta-heading"
+                className="font-serif text-2xl sm:text-3xl font-bold text-ink mb-3 leading-tight"
+              >
+                Où habiter à Madrid ?
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Compare les 7 quartiers Erasmus en un clic : loyers 2025, ambiance, transports,
+                bars — tout sur une carte interactive.
+              </p>
+              <div className="flex flex-wrap gap-3 text-sm text-gray-500 mb-7">
+                {['💰 Vallecas : 400€/mois', '🎸 Malasaña : 620€/mois', '🌈 Chueca : 680€/mois'].map((t) => (
+                  <span key={t} className="bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">{t}</span>
+                ))}
+              </div>
+              <Link
+                href="/quartiers"
+                className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold px-7 py-3.5 rounded-xl transition-colors shadow-sm"
+              >
+                Explorer la carte
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+            <div className="hidden lg:block lg:w-64 xl:w-80 bg-gradient-to-br from-brand/5 to-brand/10 h-full min-h-[240px] relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-6xl mb-3" aria-hidden="true">🗺️</div>
+                  <p className="text-sm font-semibold text-brand">7 quartiers</p>
+                  <p className="text-xs text-gray-400">carte interactive</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Quiz CTA ─── */}
       <section className="py-16 sm:py-20 bg-white" aria-labelledby="quiz-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
