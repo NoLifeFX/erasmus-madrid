@@ -4,6 +4,7 @@ import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
 import AdUnit from "@/components/AdUnit";
 import TelegramCTA from "@/components/TelegramCTA";
+import { faq } from "@/lib/faq";
 
 export const dynamic = "force-dynamic";
 
@@ -354,6 +355,62 @@ export default async function HomePage() {
             </svg>
           </Link>
           <p className="text-gray-400 text-sm mt-3">2 minutes · Résultat immédiat · À partager</p>
+        </div>
+      </section>
+
+      {/* ─── FAQ preview ─── */}
+      <section className="py-16 sm:py-20 bg-warm" aria-labelledby="faq-preview-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 bg-brand/10 text-brand text-sm font-semibold px-3 py-1.5 rounded-full mb-4">
+              <span aria-hidden="true">❓</span> 100 vraies questions
+            </span>
+            <h2
+              id="faq-preview-heading"
+              className="font-serif text-3xl sm:text-4xl font-bold text-ink mb-3"
+            >
+              Les questions les plus posées
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Des réponses claires aux vraies questions des Erasmus français à Madrid.
+            </p>
+          </div>
+
+          <div className="space-y-3 mb-8">
+            {faq
+              .filter((q) => q.popularite === 5)
+              .slice(0, 5)
+              .map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/faq#${item.id}`}
+                  className="flex items-start gap-3 bg-white rounded-xl border border-gray-100 px-5 py-4 hover:border-brand/30 hover:shadow-sm transition-all group"
+                >
+                  <span className="text-brand font-bold text-lg mt-0.5 shrink-0" aria-hidden="true">Q</span>
+                  <span className="text-gray-800 font-medium text-sm leading-relaxed group-hover:text-ink transition-colors">
+                    {item.question}
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-gray-300 group-hover:text-brand transition-colors shrink-0 mt-1 ml-auto"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold px-7 py-3.5 rounded-xl transition-colors shadow-sm"
+            >
+              Voir les 100 questions
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
