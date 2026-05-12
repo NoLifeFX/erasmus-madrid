@@ -250,6 +250,33 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ─── Quiz CTA ─── */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="quiz-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-5xl mb-5 select-none" aria-hidden="true">🎯</div>
+          <h2
+            id="quiz-heading"
+            className="font-serif text-3xl sm:text-4xl font-bold text-ink mb-4"
+          >
+            Quel type d&apos;Erasmus es-tu ?
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+            Fêtard de Malasaña, Explorateur de Retiro ou Studieux de Salamanca ?
+            10 questions pour le découvrir — et le partager à tes amis.
+          </p>
+          <Link
+            href="/quiz"
+            className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-2xl transition-colors shadow-lg"
+          >
+            Faire le quiz
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+          <p className="text-gray-400 text-sm mt-3">2 minutes · Résultat immédiat · À partager</p>
+        </div>
+      </section>
+
       {/* ─── AdSense ─── */}
       <div className="bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

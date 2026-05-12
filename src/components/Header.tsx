@@ -45,6 +45,12 @@ export default function Header() {
           {/* CTA + hamburger */}
           <div className="flex items-center gap-3">
             <Link
+              href="/quiz"
+              className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-gray-600 hover:text-brand transition-colors"
+            >
+              Quiz 🎯
+            </Link>
+            <Link
               href="/articles"
               className="hidden sm:inline-flex items-center bg-brand text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-dark transition-colors"
             >
@@ -80,6 +86,13 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/quiz"
+              className="block py-2.5 text-gray-700 hover:text-brand font-medium text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Quiz 🎯
+            </Link>
             <Link
               href="/articles"
               className="block mt-3 bg-brand text-white text-center px-4 py-2.5 rounded-lg text-sm font-semibold"
