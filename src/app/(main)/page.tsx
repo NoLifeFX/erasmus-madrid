@@ -296,6 +296,40 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ─── Budget CTA ─── */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="budget-cta-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-2 bg-brand/10 text-brand text-sm font-semibold px-3 py-1.5 rounded-full mb-5">
+            <span aria-hidden="true">💶</span> Outil exclusif
+          </span>
+          <h2
+            id="budget-cta-heading"
+            className="font-serif text-3xl sm:text-4xl font-bold text-ink mb-4"
+          >
+            Combien va coûter ton Erasmus à Madrid ?
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-3 max-w-xl mx-auto">
+            Loyer, courses, sorties, transport — calcule ton budget mensuel exact en 30 secondes
+            avec notre calculateur interactif.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500 mb-8">
+            {['🟢 Super économe : 600€', '🟡 Équilibré : 780€', '🔴 Grand vivant : 1 000€+'].map((t) => (
+              <span key={t} className="bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">{t}</span>
+            ))}
+          </div>
+          <Link
+            href="/calculateur-budget"
+            className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8 py-4 rounded-2xl transition-colors shadow-lg"
+          >
+            Calculer mon budget
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+          <p className="text-gray-400 text-sm mt-3">Gratuit · Résultat immédiat · Conseils personnalisés</p>
+        </div>
+      </section>
+
       {/* ─── Quiz CTA ─── */}
       <section className="py-16 sm:py-20 bg-white" aria-labelledby="quiz-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
