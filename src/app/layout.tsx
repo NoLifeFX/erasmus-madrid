@@ -23,17 +23,11 @@ export const metadata: Metadata = {
   },
   description:
     "Le guide indépendant des étudiants français en Erasmus à Madrid. SIM, banque sans NIE, assurance, logement et bons plans pour bien s'installer.",
-  metadataBase: new URL("https://erasmus-madrid.vercel.app"),
+  metadataBase: new URL("https://erasmus-madrid.vercel.app/"),
   openGraph: {
     siteName: "Erasmus Madrid",
     locale: "fr_FR",
     type: "website",
-  },
-  twitter: { card: "summary_large_image" },
-    // Ajoute cette ligne ↓
-    verification: {
-      google: 'dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU',
-  
   }
 };
 
