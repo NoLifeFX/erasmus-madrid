@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
+import AdSenseInit from "@/components/AdSenseInit";
 import "./globals.css";
 
 const inter = Inter({
@@ -38,9 +40,16 @@ export default function RootLayout({
     <html lang="fr" className={`${inter.variable} ${playfair.variable} h-full`}>
       <meta name="google-site-verification" content="dn134I9q0b6lYNTfF9wpE1Y2GO109hI17uJa6KP0XVU" />
       <body className="min-h-full flex flex-col font-sans text-ink antialiased">
+        <AdSenseInit />
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+import AdUnit from "@/components/AdUnit";
 
 export const dynamic = "force-dynamic";
 
@@ -247,6 +248,13 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── AdSense ─── */}
+      <div className="bg-white py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AdUnit slot="XXXXXXXX" format="horizontal" className="mx-auto max-w-3xl" />
+        </div>
+      </div>
 
       {/* ─── Newsletter ─── */}
       <section className="py-16 sm:py-20 bg-brand" aria-labelledby="newsletter-heading">

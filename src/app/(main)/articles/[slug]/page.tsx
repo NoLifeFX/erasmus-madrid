@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getArticleBySlug, getPublishedArticles } from "@/lib/articles";
 import { getContentComponent } from "@/lib/article-content";
 import MarkdownRenderer from "@/components/admin/MarkdownRenderer";
+import AdUnit from "@/components/AdUnit";
 
 export const dynamic = "force-dynamic";
 
@@ -176,6 +177,9 @@ export default async function ArticlePage(props: PageProps<"/articles/[slug]">) 
                 <p className="text-gray-400 italic">Contenu en cours de rédaction…</p>
               )}
 
+              {/* Ad before FAQ */}
+              <AdUnit slot="XXXXXXXX" format="horizontal" className="my-8" />
+
               {/* FAQ section */}
               {article.faqs.length > 0 && (
                 <section id="faq" className="mt-12 pt-10 border-t border-gray-100">
@@ -220,6 +224,8 @@ export default async function ArticlePage(props: PageProps<"/articles/[slug]">) 
                       ))}
                     </ol>
                   </nav>
+
+                  <AdUnit slot="XXXXXXXX" format="rectangle" className="mb-4" />
 
                   <div className="bg-brand-light rounded-2xl p-5 border border-brand/20">
                     <p className="font-semibold text-ink text-sm mb-2">Ce guide vous aide ?</p>

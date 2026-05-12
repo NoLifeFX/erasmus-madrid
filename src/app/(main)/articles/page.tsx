@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+import AdUnit from "@/components/AdUnit";
 
 export const dynamic = "force-dynamic";
 
@@ -77,8 +78,15 @@ export default async function ArticlesPage({
         {/* Articles grid */}
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+            {filtered.map((article, i) => (
+              <>
+                <ArticleCard key={article.slug} article={article} />
+                {i === 2 && (
+                  <div key="ad" className="col-span-full">
+                    <AdUnit slot="XXXXXXXX" format="horizontal" className="my-2" />
+                  </div>
+                )}
+              </>
             ))}
           </div>
         ) : (
