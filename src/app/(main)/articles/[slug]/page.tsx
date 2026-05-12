@@ -5,6 +5,7 @@ import { getArticleBySlug, getPublishedArticles } from "@/lib/articles";
 import { getContentComponent } from "@/lib/article-content";
 import MarkdownRenderer from "@/components/admin/MarkdownRenderer";
 import AdUnit from "@/components/AdUnit";
+import TelegramCTA from "@/components/TelegramCTA";
 
 export const dynamic = "force-dynamic";
 
@@ -176,6 +177,11 @@ export default async function ArticlePage(props: PageProps<"/articles/[slug]">) 
               ) : (
                 <p className="text-gray-400 italic">Contenu en cours de rédaction…</p>
               )}
+
+              {/* Telegram CTA */}
+              <div className="my-8">
+                <TelegramCTA variant="inline" />
+              </div>
 
               {/* Ad before FAQ */}
               <AdUnit slot="XXXXXXXX" format="horizontal" className="my-8" />

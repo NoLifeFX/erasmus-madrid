@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPublishedArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
 import AdUnit from "@/components/AdUnit";
+import TelegramCTA from "@/components/TelegramCTA";
 
 export const dynamic = "force-dynamic";
 
@@ -256,37 +257,10 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* ─── Newsletter ─── */}
-      <section className="py-16 sm:py-20 bg-brand" aria-labelledby="newsletter-heading">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2
-            id="newsletter-heading"
-            className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4"
-          >
-            Les bons plans dans votre boîte mail
-          </h2>
-          <p className="text-white/80 text-lg mb-8">
-            Nouveaux guides, alertes promotions et conseils exclusifs pour votre Erasmus à Madrid.
-          </p>
-          <form
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            aria-label="Inscription newsletter"
-          >
-            <input
-              type="email"
-              placeholder="votre@email.fr"
-              className="flex-1 px-4 py-3 rounded-xl border-0 focus:outline-none focus:ring-2 focus:ring-white/50 text-ink text-base"
-              required
-              aria-label="Adresse email"
-            />
-            <button
-              type="submit"
-              className="bg-ink text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors whitespace-nowrap"
-            >
-              S&apos;abonner
-            </button>
-          </form>
-          <p className="text-white/60 text-xs mt-4">Pas de spam. Désabonnement en un clic.</p>
+      {/* ─── Telegram CTA ─── */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <TelegramCTA variant="banner" />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TelegramCTA from "@/components/TelegramCTA";
 
 const guideLinks = [
   { href: "/articles/meilleure-carte-sim-espagne-erasmus", label: "Carte SIM en Espagne" },
@@ -70,28 +71,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Telegram */}
           <div>
             <h3 className="font-semibold text-xs uppercase tracking-wider text-gray-400 mb-4">
-              Newsletter
+              Communauté
             </h3>
-            <p className="text-sm text-gray-400 mb-3">
-              Bons plans et nouveaux guides dans votre boîte mail.
-            </p>
-            <form className="flex flex-col gap-2" aria-label="Inscription newsletter">
-              <input
-                type="email"
-                placeholder="votre@email.fr"
-                className="px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand"
-                aria-label="Adresse email"
-              />
-              <button
-                type="submit"
-                className="bg-brand hover:bg-brand-dark text-white text-sm font-medium py-2 rounded-lg transition-colors"
-              >
-                S&apos;abonner
-              </button>
-            </form>
+            <TelegramCTA variant="inline" />
           </div>
         </div>
 
